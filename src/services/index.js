@@ -3,7 +3,6 @@ import { CITY_INFO, TYPE_LIST } from '../store/index.js'
 import axios from 'axios'
 import dayjs from 'dayjs'
 import { randomNum } from '../utils/index.js'
-import calendarFormatter from '@/commons/lunarDay'
 /**
  * 获取 accessToken
  * @returns accessToken
@@ -130,7 +129,7 @@ export const getBirthdayMessage = () => {
     let resMessage = ''
     birthdayList.forEach(birthday => {
         let birthdayMessage = null
-        var gldate=calendarFormatter.lunar2solar(2023,07,18)
+     
         // 获取距离下次生日的时间
         const nextBir = dayjs(year + '-' + birthday.date).diff(dayjs(), 'day')
         if (nextBir === 0) {
@@ -138,7 +137,7 @@ export const getBirthdayMessage = () => {
         } else if (nextBir > 0 ) {
             birthdayMessage = `距离 ${birthday.name} 的生日还有${nextBir}天`
         }      
-        resMessage += `${gldate} \n`
+    
         // 存储数据
         if (birthdayMessage===0) {
             resMessage += `${birthdayMessage} \n`
