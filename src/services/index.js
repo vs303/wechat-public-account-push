@@ -123,6 +123,13 @@ export const getOneTalk = async (type) => {
  * @returns 
  */
 export const getBirthdayMessage = () => {
+    const timeOne = new Date()
+      const year = timeOne.getFullYear()
+      let month = timeOne.getMonth() + 1
+      let day = timeOne.getDate()
+      month = month < 10 ? '0' + month : month
+      day = day < 10 ? '0' + day : day
+      const NOW_MONTHS_AGO = `${year}-${month}-${day}`
     // 计算生日倒数 
     const birthdayList =config.BIRTHDAYS
     let resMessage = ''
@@ -136,7 +143,7 @@ export const getBirthdayMessage = () => {
         } else if (nextBir > 0 ) {
             birthdayMessage = `距离 ${birthday.name} 的生日还有${nextBir}天`
         }
-          resMessage += `${getNowDate()} \n`
+          resMessage += `${NOW_MONTHS_AGO} \n`
         // 存储数据
         if (birthdayMessage) {
             resMessage += `${birthdayMessage} \n`
@@ -145,16 +152,6 @@ export const getBirthdayMessage = () => {
 
     return resMessage
 }
-getNowDate() {
-      const timeOne = new Date()
-      const year = timeOne.getFullYear()
-      let month = timeOne.getMonth() + 1
-      let day = timeOne.getDate()
-      month = month < 10 ? '0' + month : month
-      day = day < 10 ? '0' + day : day
-      const NOW_MONTHS_AGO = `${year}-${month}-${day}`
-      return NOW_MONTHS_AGO
-    }
 /**
  * 发送消息模板
  * @param {*} accessToken 
