@@ -128,14 +128,14 @@ export const getBirthdayMessage = () => {
       let day = timeOne.getDate()
       month = month < 10 ? '0' + month : month
       day = day < 10 ? '0' + day : day
-     const NOW_MONTHS_AGO = `${year}-${month}-${day}`
+     const NOW_MONTHS_AGO = `${year-1}-${month}-${day}`
     // 计算生日倒数 
     const birthdayList =config.BIRTHDAYS
     let resMessage = ''
     birthdayList.forEach(birthday => {
         let birthdayMessage = null
         // 获取距离下次生日的时间
-        const nextBir = dayjs(year+'-'+ birthday.date).diff(dayjs(), 'day')
+        const nextBir = dayjs(year+'-'+ birthday.date).diff(dayjs(NOW_MONTHS_AGO ), 'day')
         if (nextBir === 0) {
             birthdayMessage = `今天是 ${birthday.name} 生日哦，祝${birthday.name}生日快乐！`
         } else if (nextBir > 0 ) {
