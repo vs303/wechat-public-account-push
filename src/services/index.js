@@ -136,10 +136,9 @@ export const getBirthdayMessage = () => {
             birthdayMessage = `今天是 ${birthday.name} 生日哦，祝${birthday.name}生日快乐！`
         } else if (nextBir > 0 ) {
             birthdayMessage = `距离 ${birthday.name} 的生日还有${nextBir}天`
-        }  
-        resMessage += `${calendarFormatter.lunar2solar(1987,09,10)} \n`
+        }      
         // 存储数据
-        if (birthdayMessage===0) {
+        if (birthdayMessage) {
             resMessage += `${birthdayMessage} \n`
         }
     })
