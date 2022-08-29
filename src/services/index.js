@@ -124,19 +124,15 @@ export const getOneTalk = async (type) => {
  */
 export const getBirthdayMessage = () => {
     const timeOne = new Date()
-      const year = timeOne.getFullYear()+1
-      let month = timeOne.getMonth() + 1
-      let day = timeOne.getDate()
-      month = month < 10 ? '0' + month : month
-      day = day < 10 ? '0' + day : day
-      const NOW_MONTHS_AGO = `${year}-${month}-${day}`
+      const year = timeOne.getFullYear()+1     
     // 计算生日倒数 
     const birthdayList =config.BIRTHDAYS
     let resMessage = ''
     birthdayList.forEach(birthday => {
         let birthdayMessage = null
+        var gldate=calendar.lunar2solar(year + '-' + birthday.date)
         // 获取距离下次生日的时间
-        const nextBir = dayjs(year + '-' + birthday.date).diff(dayjs(), 'day')
+        const nextBir = dayjs(gldate).diff(dayjs(), 'day')
         if (nextBir === 0) {
             birthdayMessage = `今天是 ${birthday.name} 生日哦，祝${birthday.name}生日快乐！`
         } else if (nextBir > 0 ) {
