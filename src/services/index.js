@@ -3,6 +3,7 @@ import { CITY_INFO, TYPE_LIST } from '../store/index.js'
 import axios from 'axios'
 import dayjs from 'dayjs'
 import { randomNum } from '../utils/index.js'
+import calendarFormatter from '../../config/lunarDay.js'
 /**
  * 获取 accessToken
  * @returns accessToken
@@ -123,12 +124,7 @@ export const getOneTalk = async (type) => {
  */
 export const getBirthdayMessage = () => {
     const timeOne = new Date()
-      const year = timeOne.getFullYear()+1
-      let month = timeOne.getMonth() + 1
-      let day = timeOne.getDate()
-      month = month < 10 ? '0' + month : month
-      day = day < 10 ? '0' + day : day
-     const NOW_MONTHS_AGO = `${year-1}-${month}-${day}`
+      const year = timeOne.getFullYear()+1     
     // 计算生日倒数 
     const birthdayList =config.BIRTHDAYS
     let resMessage = ''
@@ -141,7 +137,7 @@ export const getBirthdayMessage = () => {
         } else if (nextBir > 0 ) {
             birthdayMessage = `距离 ${birthday.name} 的生日还有${nextBir}天`
         }  
-        resMessage += `${nextBir} \n`
+        resMessage += `${calendarFormatter.lunar2solar(2023,07,18)} \n`
         // 存储数据
         if (birthdayMessage===0) {
             resMessage += `${birthdayMessage} \n`
