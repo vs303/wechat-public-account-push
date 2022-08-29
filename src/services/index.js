@@ -124,7 +124,7 @@ export const getOneTalk = async (type) => {
  */
 export const getBirthdayMessage = () => {
     // 计算生日倒数
-    const birthdayList = config.BIRTHDAYS
+    const birthdayList =new Date().getFullYear()+1+"-"+config.BIRTHDAYS
     let resMessage = ''
     birthdayList.forEach(birthday => {
         let birthdayMessage = null
