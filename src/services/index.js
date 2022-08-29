@@ -3,7 +3,7 @@ import { CITY_INFO, TYPE_LIST } from '../store/index.js'
 import axios from 'axios'
 import dayjs from 'dayjs'
 import { randomNum } from '../utils/index.js'
-import calendarFormatter from '../../config/lunarDay.js'
+import calendarFormatter from '/lunarDay.js'
 /**
  * 获取 accessToken
  * @returns accessToken
