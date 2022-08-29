@@ -37,8 +37,6 @@ export const config = {
     LOVE_DATE: "2022-07-15",
     // 结婚纪念日
     //MARRY_DATE: "2020-01-04",
-    //生日月份
-    BIRTHDAYS:"07-18"
 
     /** 好文节选 */
 
