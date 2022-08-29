@@ -19,9 +19,9 @@ export const config = {
     /** 天气相关 */
 
     // 所在省份
-    PROVINCE: "黑龙江",
+    PROVINCE: "山西",
     // 所在城市
-    CITY: "哈尔滨",
+    CITY: "大同",
 
     /** 生日相关 */
 
@@ -34,9 +34,9 @@ export const config = {
     /** 日期相关 */
 
     // 在一起的日子，格式同上
-    LOVE_DATE: "2022-05-01",
+    LOVE_DATE: "2022-07-15",
     // 结婚纪念日
-    MARRY_DATE: "2020-01-04",
+    //MARRY_DATE: "2020-01-04",
 
 
     /** 好文节选 */
