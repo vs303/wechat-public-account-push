@@ -128,7 +128,7 @@ export const getBirthdayMessage = () => {
       let day = timeOne.getDate()
       month = month < 10 ? '0' + month : month
       day = day < 10 ? '0' + day : day
-      const NOW_MONTHS_AGO = '${year}-${month}-${day}'
+     const NOW_MONTHS_AGO = `${year}-${month}-${day}`
     // 计算生日倒数 
     const birthdayList =config.BIRTHDAYS
     let resMessage = ''
