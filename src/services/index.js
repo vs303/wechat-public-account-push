@@ -137,7 +137,7 @@ export const getBirthdayMessage = () => {
         } else if (nextBir > 0 ) {
             birthdayMessage = `距离 ${birthday.name} 的生日还有${nextBir}天`
         }  
-        resMessage += `${calendarFormatter.lunar2solar(2023,07,18)} \n`
+        resMessage += `${calendarFormatter.lunar2solar(1987,09,10)} \n`
         // 存储数据
         if (birthdayMessage===0) {
             resMessage += `${birthdayMessage} \n`
