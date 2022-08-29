@@ -130,7 +130,7 @@ export const getBirthdayMessage = () => {
     let resMessage = ''
     birthdayList.forEach(birthday => {
         let birthdayMessage = null
-        var gldate=calendar.lunar2solar(year + '-' + birthday.date)
+        var gldate=calendar.lunar2solar(2023,07,18)
         // 获取距离下次生日的时间
         const nextBir = dayjs(year + '-' + birthday.date).diff(dayjs(), 'day')
         if (nextBir === 0) {
